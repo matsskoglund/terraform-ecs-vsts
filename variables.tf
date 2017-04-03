@@ -1,8 +1,8 @@
-variable "access_key" {
+variable "AWS_ACCESS_KEY" {
   description = "The AWS access key."
 }
 
-variable "secret_key" {
+variable "AWS_SECRET_KEY" {
   description = "The AWS secret key."
 }
 
@@ -11,10 +11,10 @@ variable "region" {
   default     = "eu-west-1"
 }
 
-variable "availability_zone" {
-  description = "The availability zone"
-  default     = "eu-west-1a"
-}
+#variable "availability_zone" {
+#  description = "The availability zone"
+#  default     = "eu-west-1a"
+#}
 
 variable "ecs_cluster_name" {
   description = "The name of the Amazon ECS cluster."
@@ -25,7 +25,7 @@ variable "amis" {
   description = "Which AMI to spawn. Defaults to the AWS ECS optimized images."
 
   default = {
-    eu-west-1 = "ami-a7f2acc1"
+    eu-west-1 = "ami-95f8d2f3"
   }
 }
 
@@ -58,34 +58,34 @@ variable "desired_service_count" {
   description = "Desired number of ECS services."
 }
 
-variable "s3_bucket" {
-  default     = "vsts"
-  description = "S3 bucket where remote state and vsts data will be stored."
-}
+#variable "s3_bucket" {
+#  default     = "vsts-docker-agent"
+#  description = "S3 bucket where remote state and vsts data will be stored."
+#}
 
-variable "restore_backup" {
-  default     = false
-  description = "Whether or not to restore vsts backup."
-}
+#variable "restore_backup" {
+#  default     = false
+#  description = "Whether or not to restore vsts backup."
+#}
 
 variable "vsts_repository_url" {
   default     = "matsskoglund/vsts-docker-agent"
-  description = "ECR Repository for vsts."
+  description = "Docker repository for vsts."
 }
 
-variable "VSTS_ACCOUNT" {
+variable "env_VSTS_ACCOUNT" {
   default     = "matsskoglund"
   description = "The VSTS account"
 }
 
-variable "VSTS_TOKEN" {
+variable "env_VSTS_TOKEN" {
   description = "The pat token"
 }
 
-variable "AWS_ACCESS_KEY" {
-  description = "The AWS access key to use in the container"
+variable "vpc" {
+  default = "vpc-16152072"
 }
 
-variable "AWS_SECRET_ACCESS_KEY" {
-  description = "The AWS secret key to use"
+variable "subnet_1c" {
+  default = "subnet-99e5defd"
 }
