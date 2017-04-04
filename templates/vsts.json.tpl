@@ -2,8 +2,8 @@
   {
     "name": "vsts",
     "image": "matsskoglund/vsts-docker-agent:latest",
-    "cpu": 512,
-    "memory": 1024,
+    "cpu": 10,
+    "memory": 300,
     "essential": true,
   
   "environment": [
