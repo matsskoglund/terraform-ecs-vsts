@@ -5,8 +5,8 @@
     "cpu": 512,
     "memory": 1024,
     "essential": true,
-  },
-   "environment": [
+  
+  "environment": [
         {
           "name": "VSTS_ACCOUNT",
           "value": "${env_VSTS_ACCOUNT}"
@@ -22,21 +22,21 @@
          {
           "name": "AWS_SECRET_KEY",
           "value": "${env_AWS_SECRET_KEY}"
-        },
+        }
    ],
    "mountPoints": [
       {
-        "sourceVolume": "docker-dock",
+        "sourceVolume": "docker-sock",
         "containerPath": "/var/run/docker.sock"
       }
     ],
     "logConfiguration": {
-        "logDriver": "awslogs",
+      "logDriver": "awslogs",
        "options": {
         "awslogs-group": "${log-group}",
         "awslogs-region": "eu-west-1",
         "awslogs-stream-prefix": "${log-stream}"
         }
       }
-    
+  }
 ]

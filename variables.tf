@@ -34,7 +34,7 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  default     = "mats-keypair"
+  default     = "mats"
   description = "SSH key name in your AWS account for AWS instances."
 }
 
